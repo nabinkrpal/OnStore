@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            background: url('/images/login.png') no-repeat center center/cover;
+            /* background: url('../bgi3.jpg') no-repeat center center/cover; */
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100vh;
+            width: 100%;
+            z-index: -1;
+            /* opacity: 0.89; */
+        }
+
+        nav {
+            background-color: rgba(51, 51, 51, 0.2);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            order: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            margin-right: 5vw;
+            padding: 0;
+            order: 2;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(65, 108, 215);
+            padding: 10px;
+            margin: 4px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.4s;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: rgb(122, 66, 165);
+            display: block;
+            margin: auto;
+            transition: 0.4s;
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.1);
+            color: rgb(132, 25, 172);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        #signup,
+        #login {
+            background-color: blue;
+            color: white;
+            border-radius: 25px;
+            transition: 0.4s;
+        }
+
+        #signup:hover,
+        #login:hover {
+            background-color: rgb(115, 0, 255);
+            transform: scale(1.1);
+
+        }
+
+        #signup:hover::after,
+        #login:hover::after {
+            width: 0%;
+
+        }
+
+        section {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            /* height: 100vh; */
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+
+        #fdb {
+            margin-top: 20vh;
+            color: #eeeeee;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        #fdb:hover {
+            color: #f5f999;
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+
+
+
+
+        footer {
+            background: linear-gradient(to right, rgba(5, 5, 92, 0.859), rgb(85, 4, 151));
+            text-align: center;
+            /* justify-items: center; */
+            /* background-color: #ffffff; */
+            height: 6vh;
+            color: white;
+            padding: 15px;
+            /* padding-bottom: 10px; */
+            /* position: fixed; */
+            bottom: 0;
+            width: auto;
+            /* margin-bottom: 3vh; */
+        }
+
+        /* Responsive CSS */
+        @media only screen and (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                height: 5vh;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                text-align: left;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+
+        }
+
+        @media only screen and (min-width: 601px) {
+            .menu-icon {
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">Affipick</a>
+        <div class="menu-icon">&#9776;</div>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="main.html">OnStore</a></li>
+            <li><a href="main.html">Contact Us</a></li>
+            <li><a id="signup" href="signup.html">Sign Up</a></li>
+            <li><a id="login" href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <section>
+
+        <div class="login-container">
+            <h2>Login</h2>
+            <form class="login-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <a class="forgot-password" href="#">Forgot Password?</a>
+            <div class="oauth-buttons">
+                <!-- Placeholder buttons for Gmail and Facebook login -->
+                <button onclick="loginWithGmail()">Login with Gmail</button>
+                <button onclick="loginWithFacebook()">Login with Facebook</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Copyright &copy; 2024 Affipic.com. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Placeholder functions for handling Gmail and Facebook login
+        function loginWithGmail() {
+            alert("Implement Gmail login functionality");
+        }
+
+        function loginWithFacebook() {
+            alert("Implement Facebook login functionality");
+        }
+    </script>
+
+    <!-- Smooth scrolling script -->
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navUl = document.querySelector('nav ul');
+        const navLinks = document.querySelectorAll('nav a');
+
+        menuIcon.addEventListener('click', function () {
+            navUl.classList.toggle('show');
+            toggleMenuIcon();
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const isMobile = window.innerWidth <= 600;
+
+                // If it's a mobile screen, hide navigation menu and show hamburger icon
+                if (isMobile) {
+                    navUl.classList.remove('show');
+                    toggleMenuIcon();
+                }
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+            });
+        });
+
+        function toggleMenuIcon() {
+            // Toggle hamburger icon
+            if (navUl.classList.contains('show')) {
+                menuIcon.style.display = 'none';
+            } else {
+                menuIcon.style.display = 'block';
+            }
+        }
+
+    </script>
+
+</body>
+
+
+</html>

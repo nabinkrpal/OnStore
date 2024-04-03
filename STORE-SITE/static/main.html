@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="icon" href="/images/Cube.png" type="image/png" alt="">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="script" href="scripts/main.js">
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo"><strong style="color: rgb(244, 20, 169);">//</strong>OnStore</a>
+        <div class="menu-icon">&#9776;</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cards">Products</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a id="signup" href="signup.html">Sign Up</a></li>
+            <li><a id="login" href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div id="quote-div">
+            <h1>Welcome to OnStore</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis et corrupti voluptatum laboriosam minus illum doloremque. Ipsam quisquam asperiores doloremque quod soluta officia molestiae excepturi facere dignissimos beatae, nemo sapiente nulla delectus. Laboriosam, laborum?</p>
+        </div>
+
+        <div id="animated-div">
+            <img id="animated-content" src="../images/Cube.png" alt="Cube">
+        </div>
+    </section>
+
+    <section id="cards">
+        <div id="q">
+            <h1 id="h">Our Top Three Products </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nam, voluptatum a atque amet odit veniam quis vero fuga placeat! Consectetur at omnis doloribus, veritatis error soluta blanditiis cum animi?.</p>
+        </div>
+        <div id="r">
+            <div id="c">
+                <div class="card" id="card1">
+                    <h1>#2</h1>
+                    <img src="../images/c1.jpeg" alt="Card 1 Image" height=auto width=80%>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eius esse iure inventore
+                            natus hic. Nostrum, vel. Modi, illo minus!.</p>
+                        <!-- <a href="#" class="more-link">Read More</a> -->
+                        <button class="b">Read More</button>
+                    </div>
+                </div>
+                <div class="card" id="card2">
+                    <h1>#1</h1>
+                    <img src="../images/c2.jpeg" alt="Card 2 Image" height=auto width=80%>
+                    <div class="card-content">
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quam ex impedit dolorum
+                            mollitia culpa, est beatae voluptate qui quas.</p>
+                        <!-- <a href="#" class="more-link">Read More</a> -->
+                        <button class="b">Read More</button>
+                    </div>
+                </div>
+
+                <div class="card" id="card3">
+                    <h1>#3</h1>
+                    <img src="../images/c3.jpeg" alt="Card 3 Image" height=auto width=80%>
+                    <div class="card-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam atque minus, maxime quisquam
+                            quibusdam voluptas accusantium quidem ullam eum in?</p>
+                        <!-- <a href="#" class="more-link">Read More</a> -->
+                        <button class="b">Read More</button>
+                    </div>
+                </div>
+            </div>
+            <a href="#more">more</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="links">
+            <h2>Get in touch.</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum porro eligendi vel numquam necessitatibus, odio dicta id quia quibusdam atque?</p>
+            <div>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="../images/YT LOGO.png" alt="">
+                    Youtube channel</a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="../images/INSTALOGO.png" alt="">
+                    @AffiPick</a>
+               
+                <a href="mailto:examplmail.com" target="_blank">
+            <img src="../images/gmaillogo.png" alt="">
+                    AffiPick@gmail.com</a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../images/Facebook_Logo.png" alt="">
+                    Facebook Page</a>
+            </div>
+
+        </div>
+        <div class="feedback">
+            <form action="#" method="post">
+                <!-- First Name (Mandatory) -->
+                <div>
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <!-- Last Name (Mandatory) -->
+                <div>
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <!-- Email (Mandatory) -->
+                <div>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <!-- Phone Number (Optional) -->
+                <div>
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber">
+                </div>
+                <!-- How did you find us? (Mandatory - Dropdown) -->
+                <div id="opt">
+                    <label for="findUs">How did you find us? *</label>
+                    <select id="findUs" name="findUs" required>
+                        <option value="" disabled selected>Choose one</option>
+                        <option value="search">Search Engine</option>
+                        <option value="socialMedia">Social Media</option>
+                        <option value="friend">Friend/Family Recommendation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="empty">
+
+                </div>
+                <!-- Feedback Message (Mandatory - Textarea) -->
+                <div id="fdb">
+                    <label for="feedback">Feedback Message *</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" onclick="">Submit</button>
+              </form>
+
+        </div>
+        
+        
+        
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2024 Affipic.com. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth scrolling script -->
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navUl = document.querySelector('nav ul');
+        const navLinks = document.querySelectorAll('nav a');
+
+        menuIcon.addEventListener('click', function () {
+            navUl.classList.toggle('show');
+            toggleMenuIcon();
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const isMobile = window.innerWidth <= 600;
+
+                // If it's a mobile screen, hide navigation menu and show hamburger icon
+                if (isMobile) {
+                    navUl.classList.remove('show');
+                    toggleMenuIcon();
+                }
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+            });
+        });
+
+        function toggleMenuIcon() {
+            // Toggle hamburger icon
+            if (navUl.classList.contains('show')) {
+                menuIcon.style.display = 'none';
+            } else {
+                menuIcon.style.display = 'block';
+            }
+        }
+
+    </script>
+
+</body>
+
+
+</html>
